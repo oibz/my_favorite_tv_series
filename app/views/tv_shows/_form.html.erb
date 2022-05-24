@@ -1,0 +1,37 @@
+<%= form_with(model: tv_show) do |form| %>
+  <% if tv_show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tv_show.errors.count, "error") %> prohibited this tv_show from being saved:</h2>
+
+      <ul>
+        <% tv_show.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre  %>
+    <%= form.text_field :name , class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :detalle %>
+    <%= form.text_area :summary , class: "form-control" %>
+  </div>
+<br>
+  <div class="field">
+    <%= form.label :fecha_de_lanzamiento %>
+    <%= form.datetime_select :release_date  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating , class: "form-control" %>
+  </div>
+<br>
+  <div class="actions">
+    <%= form.submit "Agregar Serie" %>
+  </div>
+<% end %>

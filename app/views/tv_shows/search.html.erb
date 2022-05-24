@@ -1,0 +1,31 @@
+<h1 class="display-3">Búsqueda</h1>
+<hr>
+<%= form_with url: "search", method: :get do |form| %>
+    <%= form.label :query, "Buscar película o serie:" %>
+    <%= form.text_field :query %>
+    <%= form.submit "Buscar" %>
+<% end %>
+
+<%= "***Ningun dato encontrado***" unless @search %>
+
+<p>
+    <strong>Nombre:</strong>
+    <%= @search.name %>
+</p>
+
+<p>
+    <strong>Detalle:</strong>
+    <%= @search.summary %>
+</p>
+
+<p>
+    <strong>Fecha de lanzamiento:</strong>
+    <%= @search.release_date %>
+</p>
+
+<p>
+    <strong>Rating:</strong>
+    <%= @search.rating %>
+</p>
+
+<%= link_to 'Atrás', tv_shows_path %>

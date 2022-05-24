@@ -1,0 +1,26 @@
+<h1 class="display-3">Estás viendo <%= @tv_show.name %></h1>
+<hr>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @tv_show.name %>
+</p>
+
+<p>
+  <strong>Detalle:</strong>
+  <%= @tv_show.summary %>
+</p>
+
+<p>
+  <strong>Fecha de lanzamiento:</strong>
+  <%= @tv_show.release_date %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @tv_show.rating %>
+</p>
+
+<%= link_to 'Editar', edit_tv_show_path(@tv_show) %> |
+<%= link_to 'Atrás', tv_shows_path %>
